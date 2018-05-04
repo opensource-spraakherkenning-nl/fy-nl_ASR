@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KALDI_root=/home/eyilmaz/main/kaldi_pony/egs/fame_v1.2/s5/webservice/resources
+KALDI_root=/var/www/lamachine/src/kaldi/egs/fame/resources
 inputdir=$1
 scratchdir=$2
 outdir=$3
