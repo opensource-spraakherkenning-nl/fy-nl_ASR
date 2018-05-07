@@ -31,7 +31,7 @@ import sys
 import os
 from base64 import b64decode as D
 
-REQUIRE_VERSION = 0.99
+REQUIRE_VERSION = 2.2
 
 CLAMDIR = clam.__path__[0] #directory where CLAM is installed, detected automatically
 WEBSERVICEDIR = os.path.dirname(os.path.abspath(__file__)) #directory where this webservice is installed, detected automatically
@@ -42,7 +42,7 @@ WEBSERVICEDIR = os.path.dirname(os.path.abspath(__file__)) #directory where this
 
 
 #The System ID, a short alphanumeric identifier for internal use only
-SYSTEM_ID = "fy-nl_ASR"
+SYSTEM_ID = "fy-nl-asr"
 #System name, the way the system is presented to the world
 SYSTEM_NAME = "Frisian-Dutch Automatic Speech Recognition System"
 
@@ -58,16 +58,16 @@ if 'VIRTUAL_ENV' in os.environ:
 
     if host == 'applejack': #configuration for server in Nijmegen
         HOST = "webservices-lst.science.ru.nl"
-        URLPREFIX = 'fy-nl_ASR'
+        URLPREFIX = 'fy-nl-asr'
 
         if not 'CLAMTEST' in os.environ:
-            ROOT = "/scratch2/www/webservices-lst/live/writable/fy-nl_ASR/"
+            ROOT = "/scratch2/www/webservices-lst/live/writable/fy-nl-asr/"
             if 'CLAMSSL' in os.environ:
                 PORT = 443
             else:
                 PORT = 80
         else:
-            ROOT = "/scratch2/www/webservices-lst/test/writable/fy-nl_ASR/"
+            ROOT = "/scratch2/www/webservices-lst/test/writable/fy-nl-asr/"
             PORT = 81
 
         USERS_MYSQL = {
@@ -87,16 +87,16 @@ if 'VIRTUAL_ENV' in os.environ:
 #         CUSTOMHTML_INDEX = "For bulk processing and other questions, please contact Henk van den Heuvel at h.vandenheuvel@let.ru.nl"
     elif host == 'mlp01': #configuration for server in Nijmegen
         HOST = "webservices-lst.science.ru.nl"
-        URLPREFIX = 'fy-nl_ASR'
+        URLPREFIX = 'fy-nl-asr'
 
         if not 'CLAMTEST' in os.environ:
-            ROOT = "/var/www/webservices-lst/live/writable/fy-nl_ASR/"
+            ROOT = "/var/www/webservices-lst/live/writable/fy-nl-asr/"
             if 'CLAMSSL' in os.environ:
                 PORT = 443
             else:
                 PORT = 80
         else:
-            ROOT = "/var/www/webservices-lst/test/writable/fy-nl_ASR/"
+            ROOT = "/var/www/webservices-lst/test/writable/fy-nl-asr/"
             PORT = 81
 
         USERS_MYSQL = {
@@ -281,7 +281,7 @@ PROFILES = [
 #Or for the shell variant:
 SCRATCHDIRECTORY=ROOT+'/scratch/'
 
-COMMAND = WEBSERVICEDIR + "/fy-nl_ASR_wrapper.sh $STATUSFILE $INPUTDIRECTORY $OUTPUTDIRECTORY "+SCRATCHDIRECTORY+" "+WEBSERVICEDIR+" $PARAMETERS"
+COMMAND = WEBSERVICEDIR + "/fy_nl_ASR_wrapper.sh $STATUSFILE $INPUTDIRECTORY $OUTPUTDIRECTORY "+SCRATCHDIRECTORY+" "+WEBSERVICEDIR+" $PARAMETERS"
 
 #Or if you only use the action paradigm, set COMMAND = None
 
