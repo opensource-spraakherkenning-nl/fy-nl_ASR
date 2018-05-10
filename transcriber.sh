@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KALDI_root=/var/www/lamachine/src/kaldi/egs/fame/resources
+KALDI_root=/var/www/lamachine2/weblamachine/opt/kaldi/egs/fame/resources #shouldn't really be hard-coded here
 inputdir=$1
 scratchdir=$2
 outdir=$3

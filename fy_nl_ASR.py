@@ -56,36 +56,7 @@ if 'VIRTUAL_ENV' in os.environ:
     ROOT = os.environ['VIRTUAL_ENV'] + "/fy-nl_ASR.clam/"
     PORT = 8802
 
-    if host == 'applejack': #configuration for server in Nijmegen
-        HOST = "webservices-lst.science.ru.nl"
-        URLPREFIX = 'fy-nl-asr'
-
-        if not 'CLAMTEST' in os.environ:
-            ROOT = "/scratch2/www/webservices-lst/live/writable/fy-nl-asr/"
-            if 'CLAMSSL' in os.environ:
-                PORT = 443
-            else:
-                PORT = 80
-        else:
-            ROOT = "/scratch2/www/webservices-lst/test/writable/fy-nl-asr/"
-            PORT = 81
-
-        USERS_MYSQL = {
-            'host': 'mysql-clamopener.science.ru.nl',
-            'user': 'clamopener',
-            'password': D(open(os.environ['CLAMOPENER_KEYFILE']).read().strip()),
-            'database': 'clamopener',
-            'table': 'clamusers_clamusers'
-        }
-        DEBUG = False
-        REALM = "WEBSERVICES-LST"
-        DIGESTOPAQUE = open(os.environ['CLAM_DIGESTOPAQUEFILE']).read().strip()
-        SECRET_KEY = open(os.environ['CLAM_SECRETKEYFILE']).read().strip()
-        ADMINS = ['proycon','antalb','wstoop']
-        MAXLOADAVG = 16.0
-        INTERFACEOPTIONS = "disableliveinput"
-#         CUSTOMHTML_INDEX = "For bulk processing and other questions, please contact Henk van den Heuvel at h.vandenheuvel@let.ru.nl"
-    elif host == 'mlp01': #configuration for server in Nijmegen
+    if host == 'mlp01': #configuration for server in Nijmegen
         HOST = "webservices-lst.science.ru.nl"
         URLPREFIX = 'fy-nl-asr'
 
@@ -128,10 +99,6 @@ else:
 
 #set security realm, a required component for hashing passwords (will default to SYSTEM_ID if not set)
 #REALM = SYSTEM_ID
-
-USERS = None #no user authentication/security (this is not recommended for production environments!)
-
-ADMINS = None #List of usernames that are administrator and can access the administrative web-interface (on URL /admin/)
 
 #If you want to enable user-based security, you can define a dictionary
 #of users and (hashed) passwords here. The actual authentication will proceed
