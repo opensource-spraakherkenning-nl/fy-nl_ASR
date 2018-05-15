@@ -1,11 +1,11 @@
 #!/bin/bash
 
-KALDI_root=/var/www/lamachine2/weblamachine/opt/kaldi/egs/fame/resources #shouldn't really be hard-coded here
 inputdir=$1
 scratchdir=$2
 outdir=$3
+resourcedir=$4
 
-cd $KALDI_root
+cd $resourcedir
 for inputfile in $inputdir/*; do
 
   filename=$(basename "$inputfile")
@@ -24,3 +24,4 @@ for inputfile in $inputdir/*; do
   rm -f $scratchdir/${file_id}.wav
 
 done
+cd -

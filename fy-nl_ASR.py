@@ -49,49 +49,10 @@ SYSTEM_NAME = "Frisian-Dutch Automatic Speech Recognition System"
 #An informative description for this system (this should be fairly short, about one paragraph, and may not contain HTML)
 SYSTEM_DESCRIPTION = "This webservice uses automatic speech recognition to provide the transcriptions of recordings spoken in Frisian, Dutch and Frisian-Dutch (code-switching) recordings. You can upload and process only one file per project. For bulk processing and other questions, please contact Henk van den Heuvel at h.vandenheuvel@let.ru.nl."
 
-# ================ Server specific configuration for CLAM ===============
-host = os.uname()[1]
-if 'VIRTUAL_ENV' in os.environ:
-    # Virtual Environment (LaMachine)
-    ROOT = os.environ['VIRTUAL_ENV'] + "/fy-nl_ASR.clam/"
-    PORT = 8802
+INTERFACEOPTIONS = "disableliveinput"
 
-    if host == 'mlp01': #configuration for server in Nijmegen
-        HOST = "webservices-lst.science.ru.nl"
-        URLPREFIX = 'fy-nl-asr'
-
-        if not 'CLAMTEST' in os.environ:
-            ROOT = "/var/www/webservices-lst/live/writable/fy-nl-asr/"
-            if 'CLAMSSL' in os.environ:
-                PORT = 443
-            else:
-                PORT = 80
-        else:
-            ROOT = "/var/www/webservices-lst/test/writable/fy-nl-asr/"
-            PORT = 81
-
-        USERS_MYSQL = {
-            'host': 'mysql-clamopener.science.ru.nl',
-            'user': 'clamopener',
-            'password': D(open(os.environ['CLAMOPENER_KEYFILE']).read().strip()),
-            'database': 'clamopener',
-            'table': 'clamusers_clamusers'
-        }
-        DEBUG = False
-        REALM = "WEBSERVICES-LST"
-        DIGESTOPAQUE = open(os.environ['CLAM_DIGESTOPAQUEFILE']).read().strip()
-        SECRET_KEY = open(os.environ['CLAM_SECRETKEYFILE']).read().strip()
-        ADMINS = ['proycon','antalb','wstoop']
-        MAXLOADAVG = 16.0
-        INTERFACEOPTIONS = "disableliveinput"
-#         CUSTOMHTML_INDEX = "For bulk processing and other questions, please contact Henk van den Heuvel at h.vandenheuvel@let.ru.nl"
-    elif host == "mlp11":
-        DEBUG = True
-        ROOT = "/home/eyilmaz/main/kaldi_pony/egs/fame_v1.2/s5/webservice/resources/writable/"
-        INTERFACEOPTIONS = "disableliveinput"
-#         CUSTOMHTML_INDEX = "For bulk processing and other questions, please contact Henk van den Heuvel at h.vandenheuvel@let.ru.nl"
-else:
-    raise Exception("I don't know where I'm running from! Got " + host)
+#Load external configuration file
+loadconfig(__name__)
 
 # ======== AUTHENTICATION & SECURITY ===========
 
@@ -246,9 +207,11 @@ PROFILES = [
 #
 # COMMAND = WEBSERVICEDIR + "/fy-nl_ASR_wrapper.sh $DATAFILE $STATUSFILE $OUTPUTDIRECTORY"
 #Or for the shell variant:
-SCRATCHDIRECTORY=ROOT+'/scratch/'
 
-COMMAND = WEBSERVICEDIR + "/fy_nl_ASR_wrapper.sh $STATUSFILE $INPUTDIRECTORY $OUTPUTDIRECTORY "+SCRATCHDIRECTORY+" "+WEBSERVICEDIR+" $PARAMETERS"
+SCRATCHDIRECTORY=ROOT+'/scratch/'
+RESOURCEDIRECTORY=ROOT+'/resources/'
+
+COMMAND = WEBSERVICEDIR + "/fy-nl_ASR_wrapper.sh $STATUSFILE $INPUTDIRECTORY $OUTPUTDIRECTORY "+SCRATCHDIRECTORY+" "+WEBSERVICEDIR+" "+RESOURCEDIRECTORY+" $PARAMETERS"
 
 #Or if you only use the action paradigm, set COMMAND = None
 
