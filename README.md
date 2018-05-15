@@ -1,4 +1,4 @@
-# fy-nl_ASR
+# fy_nl_ASR
 Frisian-Dutch Automatic Speech Recognition Webservice
 
 This webservice uses the Frisian-Dutch code-switching automatic speech recognition system developed in the scope of the FAME! Project (www.fame.frl). The details of the acoustic and language model used in this webservice can be found at

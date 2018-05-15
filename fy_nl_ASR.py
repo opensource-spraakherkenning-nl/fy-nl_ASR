@@ -205,13 +205,13 @@ PROFILES = [
 #                        (set to "anonymous" if there is none)
 #     $PARAMETERS      - List of chosen parameters, using the specified flags
 #
-# COMMAND = WEBSERVICEDIR + "/fy-nl_ASR_wrapper.sh $DATAFILE $STATUSFILE $OUTPUTDIRECTORY"
+# COMMAND = WEBSERVICEDIR + "/fy_nl_ASR_wrapper.sh $DATAFILE $STATUSFILE $OUTPUTDIRECTORY"
 #Or for the shell variant:
 
 SCRATCHDIRECTORY=ROOT+'/scratch/'
 RESOURCEDIRECTORY=ROOT+'/resources/'
 
-COMMAND = WEBSERVICEDIR + "/fy-nl_ASR_wrapper.sh $STATUSFILE $INPUTDIRECTORY $OUTPUTDIRECTORY "+SCRATCHDIRECTORY+" "+WEBSERVICEDIR+" "+RESOURCEDIRECTORY+" $PARAMETERS"
+COMMAND = WEBSERVICEDIR + "/fy_nl_ASR_wrapper.sh $STATUSFILE $INPUTDIRECTORY $OUTPUTDIRECTORY "+SCRATCHDIRECTORY+" "+WEBSERVICEDIR+" "+RESOURCEDIRECTORY+" $PARAMETERS"
 
 #Or if you only use the action paradigm, set COMMAND = None
 
