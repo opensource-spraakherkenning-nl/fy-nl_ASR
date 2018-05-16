@@ -21,6 +21,7 @@ for inputfile in $inputdir/*; do
   cp $target_dir/${recog_dir_name}.ctm $outdir/${file_id}.ctm
   cp $target_dir/${recog_dir_name}.rttm $outdir/${file_id}.rttm
   ./scripts/ctm2xml.py $outdir $file_id $scratchdir
+  ./scripts/ctm2tg.py $outdir/${file_id}.ctm $scratchdir/${file_id}.wav
   rm -f $scratchdir/${file_id}.wav
 
 done
