@@ -1,3 +1,2 @@
-# root: "{{VIRTUAL_ENV}}/fy_nl_ASR.clam"
-root: "/vol/tensusers/eyilmaz/webservices/writable/fy_nl_ASR"
+root: "{{VIRTUAL_ENV}}/fy_nl_ASR.clam"
 port: 8802
