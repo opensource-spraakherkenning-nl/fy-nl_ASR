@@ -1,2 +1,4 @@
 root: "{{VIRTUAL_ENV}}/fy_nl_ASR.clam"
+resourcedirectory: "{{VIRTUAL_ENV}}/fy_nl_ASR.clam/resources"
+scratchdirectory: "{{VIRTUAL_ENV}}/fy_nl_ASR.clam/scratch"
 port: 8802
