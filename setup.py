@@ -11,11 +11,11 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "Frisian Dutch Automatic Speech Recognition Webservice",
+    name = "fy_nl_ASR",
     version = "0.1",
     author = "Emre Yılmaz",
     author_email = "emre@nus.edu.sg",
-    description = ("Webservice"),
+    description = ("Frisian Dutch Automatic Speech Recognition Webservice"),
     license = "unknown",
     keywords = "clam webservice rest nlp computational_linguistics rest",
     url = "https://github.com/schemreier/fy-nl_ASR",
