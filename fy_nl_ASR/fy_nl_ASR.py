@@ -42,7 +42,7 @@ WEBSERVICEDIR = os.path.dirname(os.path.abspath(__file__)) #directory where this
 
 
 #The System ID, a short alphanumeric identifier for internal use only
-SYSTEM_ID = "fy-nl-asr"
+SYSTEM_ID = "fy_nl_ASR"
 #System name, the way the system is presented to the world
 SYSTEM_NAME = "Frisian-Dutch Automatic Speech Recognition System"
 
