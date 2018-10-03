@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf8 -*-
 
 from __future__ import print_function
@@ -8,7 +8,7 @@ from setuptools import setup
 
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    return open(os.path.join(os.path.dirname(__file__), fname), 'r', encoding='utf-8').read()
 
 setup(
     name = "fy_nl_ASR",
