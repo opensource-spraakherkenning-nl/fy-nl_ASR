@@ -16,7 +16,7 @@ setup(
     author = "Emre Yılmaz",
     author_email = "emre@nus.edu.sg",
     description = ("Frisian Dutch Automatic Speech Recognition Webservice"),
-    license = "unknown",
+    license = "AGPL3",
     keywords = "clam webservice rest nlp computational_linguistics rest",
     url = "https://github.com/opensource-spraakherkenning-nl/fy-nl_ASR",
     packages=['fy_nl_ASR'],
