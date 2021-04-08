@@ -10,10 +10,10 @@
     "@type": "SoftwareSourceCode",
     "identifier": "fy-nl_ASR",
     "name": "Frisian-Dutch Automatic Speech Recognition",
-    "version": "0.1",
+    "version": "0.2",
     "description": "This webservice uses the Frisian-Dutch code-switching automatic speech recognition system developed in the scope of the FAME! Project (www.fame.frl).",
     "license": "unknown",
-	"url": "https://github.com/schemreier/fy-nl_ASR",
+	"url": "https://github.com/opensource-spraakherkenning-nl/fy-nl_ASR",
     "producer": {
         "@id": "https://www.ru.nl/clst",
         "@type": "Organization",
@@ -48,7 +48,7 @@
 	],
 	"sourceOrganization": { "@id": "https://www.ru.nl/clst" },
 	"operatingSystem": "POSIX",
-	"codeRepository": "https://github.com/schemreier/fy-nl_ASR",
+	"codeRepository": "https://github.com/opensource-spraakherkenning-nl/fy-nl_ASR",
     "softwareRequirements": [
         {
 			"@type": "SoftwareApplication",
@@ -56,8 +56,8 @@
 			"name": "kaldi"
 		}
 	],
-	"readme": "https://github.com/schemreier/fy-nl_ASR/blob/master/README.md",
-	"issueTracker": "https://github.com/schemreier/fy-nl_ASR/issues",
+	"readme": "https://github.com/opensource-spraakherkenning-nl/fy-nl_ASR/blob/master/README.md",
+	"issueTracker": "https://github.com/opensource-spraakherkenning-nl/fy-nl_ASR/issues",
 	"developmentStatus": "active",
 	"keywords":  [ "nlp", "speech recognition", "dutch" ],
 	"dateCreated": "2018-05-17"

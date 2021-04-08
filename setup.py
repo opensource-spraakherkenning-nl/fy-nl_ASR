@@ -12,13 +12,13 @@ def read(fname):
 
 setup(
     name = "fy_nl_ASR",
-    version = "0.1",
+    version = "0.2",
     author = "Emre Yılmaz",
     author_email = "emre@nus.edu.sg",
     description = ("Frisian Dutch Automatic Speech Recognition Webservice"),
     license = "unknown",
     keywords = "clam webservice rest nlp computational_linguistics rest",
-    url = "https://github.com/schemreier/fy-nl_ASR",
+    url = "https://github.com/opensource-spraakherkenning-nl/fy-nl_ASR",
     packages=['fy_nl_ASR'],
     long_description=read('README.md'),
     classifiers=[
@@ -33,5 +33,5 @@ setup(
     ],
     package_data = {'fy_nl_ASR':['*.sh','*.wsgi','*.yml'] },
     include_package_data=True,
-    install_requires=['CLAM >= 2.3']
+    install_requires=['CLAM >= 3.0']
 )
